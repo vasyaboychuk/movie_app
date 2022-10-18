@@ -1,7 +1,9 @@
+import {SingleMovie} from "../../components";
+
 function MovieDetailsPage(props) {
     return (
         <div>
-            MovieDetailsPage
+            <SingleMovie/>
         </div>
     )
 }
