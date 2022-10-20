@@ -20,6 +20,7 @@ const Genres=()=> {
     }
 
 
+
     useEffect(()=>{
         dispatch(genresActions.getAll());
     },[])
