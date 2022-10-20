@@ -3,11 +3,9 @@ import {urls} from "../configs";
 
 
 const movieService={
-    getAll: () => axiosService.get(urls.movies),
+    getAllByPage: (page) => axiosService.get(`${urls.movies}?page=${page}`),
     getById: (id) => axiosService.get(`${urls.movieById}/${id}`),
-    searchMovie:(page,value)=>axiosService.get(`${urls.searchMovie}?page=${page}&query=${value}`)
-
-
+    searchMovie:(query)=>axiosService.get(`${urls.searchMovie}?query=${query}`)
 
 }
 export {

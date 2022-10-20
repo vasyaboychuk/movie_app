@@ -1,6 +1,6 @@
 import {Outlet} from "react-router-dom";
 
-import {Header} from "../../components";
+import {Footer, Header} from "../../components";
 
 
 
@@ -8,10 +8,11 @@ import {Header} from "../../components";
 function MainLayout() {
     return (
         <div>
-           <Header/>
-           <Outlet/>
+            <Header/>
+            <Outlet/>
+            <Footer/>
         </div>
-    )
+    );
 }
 
 export {MainLayout};

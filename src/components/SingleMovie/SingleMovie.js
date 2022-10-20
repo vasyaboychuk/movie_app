@@ -13,7 +13,7 @@ function SingleMovie(props) {
     const {id} = useParams();
 
     useEffect(()=>{
-       dispatch(movieActions.getById({id}))
+        dispatch(movieActions.getById({id}))
     },[id])
 
 
