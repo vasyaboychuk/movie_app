@@ -9,10 +9,14 @@ function MovieList() {
 
     const dispatch = useDispatch();
 
+
     const {movies, currentPage} = useSelector(state => state.movieReducer);
+    const {genre} = useSelector(state => state.genreReducer);
+
 
     useEffect(() => {
         dispatch(movieActions.getAllByPage(currentPage))
+
     }, [currentPage]);
 
     return (

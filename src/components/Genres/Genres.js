@@ -7,9 +7,18 @@ const Genres=()=> {
 
 
 
-    const {genres} = useSelector(state=>state.genreReducer);
+    const {genres,genre} = useSelector(state=>state.genreReducer);
 
     const dispatch = useDispatch();
+
+
+
+
+    const handleCurrentGenre=(e)=>{
+       dispatch(genresActions.setGenre(e.target.value))
+
+    }
+
 
     useEffect(()=>{
         dispatch(genresActions.getAll());
@@ -18,10 +27,10 @@ const Genres=()=> {
     return (
         <div className={css.genres}>
             {/*{genres.genres?.map(genre=><button key={genre.id}>{genre.name}</button>)}*/}
-            <select>
-                { genres.genres?.map(genre=><option >{genre.name}</option>)}
+            {/*<select>*/}
+                { genres.genres?.map(genre=><button value={genre.name} onClick={(e)=>handleCurrentGenre(e)} >{genre.name}</button>)}
 
-            </select>
+            {/*</select>*/}
         </div>
     )
 }

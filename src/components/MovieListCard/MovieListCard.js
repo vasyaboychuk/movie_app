@@ -30,7 +30,7 @@ function MovieListCard({movie}) {
                     <div >
                         <span>Rating: {vote_average}</span>
                        <Stack  className={css.rating} spacing={1}>
-                           <Rating name="half-rating" defaultValue={vote_average/2} precisions={0.5} readOnly/>
+                           <Rating name="half-rating" defaultValue={vote_average} precisions={0.5} readOnly max={10}/>
                        </Stack>
                     </div>
 

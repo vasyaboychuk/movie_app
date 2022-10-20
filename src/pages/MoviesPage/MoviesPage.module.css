@@ -1,7 +1,7 @@
 .container {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 20%;
     flex-direction: column;
     width: 100%;
     background-color: #165a72;
@@ -9,6 +9,7 @@
 }
 
 .pagination {
+    margin-top: 30px;
     margin-bottom: 30px;
 
 }

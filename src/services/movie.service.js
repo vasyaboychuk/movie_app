@@ -7,6 +7,7 @@ const movieService={
     getById: (id) => axiosService.get(`${urls.movieById}/${id}`),
     searchMovie:(query)=>axiosService.get(`${urls.searchMovie}?query=${query}`)
 
+
 }
 export {
     movieService

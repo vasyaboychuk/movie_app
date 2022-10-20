@@ -1,6 +1,6 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 
-import {movieService} from "../../services";
+import {genreService, movieService} from "../../services";
 
 
 const initialState = {
@@ -40,13 +40,26 @@ const getBySearch = createAsyncThunk(
     "movieSlice/getBySearch",
     async ({query}, {rejectWithValue}) => {
         try {
-            debugger
+
             const {data} = await movieService.searchMovie(query);
             return data
         } catch (e) {
             return rejectWithValue(e.response.data)
         }
 
+    }
+);
+
+const getMovieByGenre = createAsyncThunk(
+    " genreSlice/getMovieByGenre",
+    async ({idGenre}, {rejectWithValue}) => {
+        try {
+            const {data} = await genreService.getWithSearch(idGenre);
+            return data
+        } catch (e) {
+            return rejectWithValue(e.response.data)
+
+        }
     }
 );
 
@@ -66,9 +79,13 @@ const movieSlice = createSlice({
             })
             .addCase(getById.fulfilled, (state, action) => {
                 state.currentMovie = action.payload
-            }).addCase(getBySearch.fulfilled, (state, action) => {
-            state.movies = action.payload.results;
-        })
+            })
+            .addCase(getBySearch.fulfilled, (state, action) => {
+                state.movies = action.payload.results;
+            })
+            .addCase(getMovieByGenre.fulfilled, (state, action) => {
+                state.movies = action.payload.results
+            })
 });
 
 
@@ -78,7 +95,8 @@ const movieActions = {
     getAllByPage,
     getById,
     setCurrentPage,
-    getBySearch
+    getBySearch,
+    getMovieByGenre
 }
 
 export {
