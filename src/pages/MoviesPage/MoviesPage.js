@@ -1,6 +1,6 @@
 import {Pagination} from "@mui/material";
 
-import style from "./MoviesPage.module.css"
+import css from "./MoviesPage.module.css"
 import {Genres, MovieList} from "../../components";
 import {usePagination} from "../../hooks";
 
@@ -8,15 +8,16 @@ function MoviesPage() {
     const [handeCurrentPage, totalPage] = usePagination();
 
     return (
-        <div className={style.container}>
+        <div className={css.container}>
             <Genres/>
             <MovieList/>
-            <div className={style.pagination}>
+
+            <div className={css.pagination}>
                 <Pagination color={"primary"} count={totalPage} onChange={(e, page) => handeCurrentPage(page)}/>
             </div>
 
         </div>
-    )
+    );
 }
 
 export {MoviesPage};

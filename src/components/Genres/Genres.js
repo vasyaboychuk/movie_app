@@ -27,7 +27,7 @@ const Genres=()=> {
 
     return (
         <div className={css.genres}>
-            {/*{genres.genres?.map(genre=><button key={genre.id}>{genre.name}</button>)}*/}
+            {genres.genres?.map(genre=><button key={genre.id}>{genre.name}</button>)}
             {/*<select>*/}
                 { genres.genres?.map(genre=><button value={genre.name} onClick={(e)=>handleCurrentGenre(e)} >{genre.name}</button>)}
 
