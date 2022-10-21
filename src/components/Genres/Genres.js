@@ -16,10 +16,10 @@ const Genres=()=> {
 
 
 
-    const handleCurrentGenre=(e)=>{
-       dispatch(genresActions.setGenre(e.target.value))
-
-    }
+    // const handleCurrentGenre=(e)=>{
+    //    dispatch(genresActions.setGenre(e.target.value))
+    //
+    // }
 
 
 
@@ -32,7 +32,7 @@ const Genres=()=> {
             {/*{genres.genres?.map(genre=><button key={genre.id}>{genre.name}</button>)}*/}
             {/*<select>*/}
             {/*    { genres.genres?.map(genre=><button value={genre.name} onClick={(e)=>handleCurrentGenre(e)} >{genre.name}</button>)}*/}
-                { genres.genres?.map(genre=><Button variant="outlined" color="inherit">{genre.name}</Button>)}
+                { genres.genres?.map(genre=><Button onClick={()=>dispatch(genresActions.setGenre(genre.id))} variant="outlined" color="inherit">{genre.name}</Button>)}
 
             {/*</select>*/}
         </div>
