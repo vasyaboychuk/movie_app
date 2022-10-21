@@ -4,6 +4,7 @@ import {useForm} from "react-hook-form";
 import css from './Header.module.css';
 import {useDispatch} from "react-redux";
 import {movieActions} from "../../redux";
+import {Button} from "@mui/material";
 
 function Header(props) {
 
@@ -23,11 +24,15 @@ function Header(props) {
                     <input type={"text"} placeholder={'search movie'} {...register('search movie')}
                            onChange={(e) => setQuery(e.target.value)}/>
 
-                    <button>search</button>
+                    {/*<button>search</button>*/}
+                    <Button variant="contained" size={"small"}>search</Button>
                 </form>
             </div>
+            <div className={css.name}>
+                <h2>BEST MOVIES</h2>
+            </div>
         </div>
-    )
+    );
 }
 
 export {Header};

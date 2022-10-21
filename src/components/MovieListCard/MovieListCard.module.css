@@ -1,33 +1,42 @@
 .Card{
     box-sizing: border-box;
-    width: 26%;
+    width: 20%;
     height: 415px;
-    /*position: relative;*/
     min-height: 250px;
-
-    background: grey;
+    display: flex;
+    flex-direction: column;
+    background-color: #282c34;
     border-radius: 5px;
-
-
+    padding: 5px;
+}
+.Card:hover {
+    background-color: white;
+    color:black;
 }
 .CardInfo{
     width: 100%;
     height: 100%;
 }
 .photo{
-
+    border-radius: 10px ;
     width: 100%;
-    height: 70%;
+    height: 80%;
 
 
 }
 .info{
     width: 100%;
-    height: 20%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    font-size: 15px;
 }
 .rating {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 
 }
 

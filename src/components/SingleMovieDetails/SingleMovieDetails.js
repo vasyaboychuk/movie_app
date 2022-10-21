@@ -1,6 +1,8 @@
 import {useNavigate} from "react-router-dom";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 
 import css from './SingleMovieDetails.module.css';
+import {Button} from "@mui/material";
 
 function SingleMovieDetails({currentMovie}) {
     const {title,original_language,original_title,overview,release_date,poster_path} = currentMovie;
@@ -19,7 +21,10 @@ function SingleMovieDetails({currentMovie}) {
                     <span>Release: {release_date}</span>
                 </div>
                 <div className={css.btn}>
-                    <button onClick={() => navigate(-1)}>back</button>
+                    {/*<button onClick={() => navigate(-1)}>back</button>*/}
+                    {/*<ArrowBackIcon onClick={() => navigate(-1)} fontSize={"large"} color={"primary"}/>*/}
+                    {/*{'back'}*/}
+                    <Button variant="contained" onClick={() => navigate(-1)}>BACK</Button>
                 </div>
             </div>
 

@@ -8,7 +8,9 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 function Footer(props) {
     return (
         <div className={css.container}>
-
+            <div>
+                <h3 className={css.info}>Contact me</h3>
+            </div>
             <div className={css.icons}>
                 <InstagramIcon fontSize={"large"}/>
                 <FacebookIcon fontSize={"large"}/>

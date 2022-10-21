@@ -1,18 +1,28 @@
 .icons{
-    width: 100%;
-    height: 100px;
+    width: 20%;
+    height: 50%;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
 
 }
 .container{
+    height: 100px;
     display: flex;
     justify-content: end;
     align-items: end;
     background-color: #0f3c4c;
     box-shadow: 0 1px 5px black;
-
+    flex-direction: column;
+}
+.info{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
 
 }
