@@ -18,11 +18,17 @@ function MovieList() {
 
 
     useEffect(() => {
-        dispatch(movieActions.getAllByPage({currentPage,genre}))
+        dispatch(movieActions.getAllByPage(currentPage))
 
-    }, [currentPage,genre]);
+    }, [currentPage]);
 
-
+        // useEffect(()=>{
+        //     if(genre){
+        //         dispatch(movieActions.getMovieByGenre({genre}))
+        //     }else{
+        //         dispatch(movieActions.getAllByPage(currentPage))
+        //     }
+        // },[currentPage,genre])
 
     return (
         <div className={css.wrap} data-theme={theme}>

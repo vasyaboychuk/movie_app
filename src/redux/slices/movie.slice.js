@@ -14,10 +14,9 @@ const initialState = {
 
 const getAllByPage = createAsyncThunk(
     "movieSlice/getAllByPage",
-    async (pageQuery, {rejectWithValue}) => {
+    async (page, {rejectWithValue}) => {
         try {
-            const {currentPage,genre}=pageQuery;
-            const {data} = await movieService.getAllByPage(currentPage,genre);
+            const {data} = await movieService.getAllByPage(page);
             return data
         } catch (e) {
             return rejectWithValue(e.response.data)
