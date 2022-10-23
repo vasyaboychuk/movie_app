@@ -25,12 +25,9 @@ const genreSlice = createSlice({
     name: 'genreSlice',
     initialState,
     reducers: {
-        getGenre: (state, action) => {
-            state.genre = action.payload
-        },
         setGenre:(state,action)=>{
-            state.genres=action.payload
-            // state.genres.push(action.payload)
+            state.genre=action.payload
+
         }
     },
     extraReducers: builder =>
@@ -50,7 +47,6 @@ const {reducer: genreReducer, actions:{getGenre,setGenre}} = genreSlice;
 
 const genresActions = {
     getAll,
-    getGenre,
     setGenre
 
 };
