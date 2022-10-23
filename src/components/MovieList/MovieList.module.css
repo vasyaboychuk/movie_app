@@ -4,3 +4,18 @@
     gap:10px;
     justify-content: space-around;
 }
+[data-theme='dark'] {
+    background-color: #272c33;
+    color:snow;
+}
+[data-theme='light'] {
+    background-color:#DEE4E7;
+    color: #37474F;
+
+}@media screen and (max-width: 800px){
+    .wrap{
+        display: flex;
+        flex-direction: column;
+    }
+
+}

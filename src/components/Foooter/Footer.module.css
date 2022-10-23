@@ -19,10 +19,19 @@
     flex-direction: column;
 }
 .info{
+    width: 20%;
     height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 50px;
 
+
+}
+[data-theme='dark'] .container{
+    background-color: black;
+    color:snow;
+}
+[data-theme='light'] .container{
+    background-color: slategrey;
+    color: #002e3f;
 }

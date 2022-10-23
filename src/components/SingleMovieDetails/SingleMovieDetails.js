@@ -3,13 +3,16 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 
 import css from './SingleMovieDetails.module.css';
 import {Button} from "@mui/material";
+import {useContext} from "react";
+import {ThemeContext} from "../../App";
 
 function SingleMovieDetails({currentMovie}) {
     const {title,original_language,original_title,overview,release_date,poster_path} = currentMovie;
 
     const navigate = useNavigate();
+    const {theme} = useContext(ThemeContext);
     return (
-        <div className={css.container}>
+        <div className={css.container} data-theme={theme}>
             <div className={css.poster}>
                 <img className={css.photo} src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title}/>
             </div>

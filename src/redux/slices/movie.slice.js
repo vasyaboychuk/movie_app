@@ -52,7 +52,7 @@ const getBySearch = createAsyncThunk(
 
 const getMovieByGenre = createAsyncThunk(
     " genreSlice/getMovieByGenre",
-    async ({idGenre}, {rejectWithValue}) => {
+    async (idGenre, {rejectWithValue}) => {
         try {
             const {data} = await genreService.getWithSearch(idGenre);
             return data

@@ -4,12 +4,15 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import {useContext} from "react";
+import {ThemeContext} from "../../App";
 
 function Footer(props) {
+    const {theme} = useContext(ThemeContext);
     return (
-        <div className={css.container}>
-            <div>
-                <h3 className={css.info}>Contact me</h3>
+        <div className={css.container} data-theme={theme}>
+            <div className={css.info}>
+                <h3 >Contact me</h3>
             </div>
             <div className={css.icons}>
                 <InstagramIcon fontSize={"large"}/>

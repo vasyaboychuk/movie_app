@@ -14,3 +14,12 @@
 .currentMovie:hover {
     box-shadow: 0 8px 16px 0 rgb(0, 0, 0, 0.3);
 }
+[data-theme='dark'] .currentMovie{
+    background-color: #272c33;
+    color:snow;
+}
+[data-theme='light'] .currentMovie{
+    background-color:#DEE4E7;
+    color: #37474F;
+
+}

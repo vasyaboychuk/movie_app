@@ -57,5 +57,14 @@
     align-items: center;
     margin-top: 10px;
 }
+[data-theme='dark'] .Card{
+    box-shadow:0 4px 8px 0 rgb(169, 167, 167),0 6px 20px 0 rgba(185, 174, 174, 0.19);
+
+}
+[data-theme='light'] .Card{
+   box-shadow:0 4px 8px 0 rgba(0,0,0,0.2) ,0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
 
 

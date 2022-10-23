@@ -44,3 +44,12 @@
     height: 60%;
     width: 70%;
 }
+[data-theme='dark'] .container{
+    background-color: #272c33;
+    color:snow;
+}
+[data-theme='light'] .container{
+    background-color:#DEE4E7;
+    color: #37474F;
+
+}
