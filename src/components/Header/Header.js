@@ -1,13 +1,12 @@
 import {useContext, useState} from "react";
 import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
-
-import css from './Header.module.css';
 import {useDispatch} from "react-redux";
-import {movieActions} from "../../redux";
 import {Button} from "@mui/material";
 import ReactSwitch from 'react-switch';
 
+import css from './Header.module.css';
+import {movieActions} from "../../redux";
 import {ThemeContext} from "../../App";
 
 

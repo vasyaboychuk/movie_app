@@ -36,10 +36,7 @@ function MovieListCard({movie}) {
                     <div className={css.infoRating}>
 
                         <span >Rating: {vote_average}</span>
-                        {/*<Stack className={css.rating} spacing={2}>*/}
-                        {/*    <Rating name="half-rating-read" defaultValue={vote_average} precisions={0.5} readOnly*/}
-                        {/*            max={10}/>*/}
-                        {/*</Stack>*/}
+
                         <StarRatings className={css.rating}
                                      rating={vote_average}
                                      starRatedColor="yellow"

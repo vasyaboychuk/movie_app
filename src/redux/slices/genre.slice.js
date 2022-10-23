@@ -43,7 +43,7 @@ const genreSlice = createSlice({
 
 
 
-const {reducer: genreReducer, actions:{getGenre,setGenre}} = genreSlice;
+const {reducer: genreReducer, actions:{setGenre}} = genreSlice;
 
 const genresActions = {
     getAll,
