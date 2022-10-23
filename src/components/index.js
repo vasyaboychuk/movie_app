@@ -5,3 +5,5 @@ export * from './SingleMovie/SingleMovie';
 export * from './SingleMovieDetails/SingleMovieDetails'
 export * from './Genres/Genres';
 export * from './Foooter/Footer'
+export * from './FavouriteMovies/FavouriteMovies';
+export * from './FavouriteMoviesList/FavouriteMoviesList'
