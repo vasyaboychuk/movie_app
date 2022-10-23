@@ -1,6 +1,7 @@
-import css from "../MovieListCard/MovieListCard.module.css";
 import {Badge} from "@mui/material";
 import StarRatings from "react-star-ratings/build/star-ratings";
+
+import css from "../MovieListCard/MovieListCard.module.css";
 
 function FavouriteMovies({movie}) {
     const {title, poster_path,vote_average,adult,original_language} = movie;
