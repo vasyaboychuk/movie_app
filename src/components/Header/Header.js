@@ -28,12 +28,15 @@ function Header(props) {
 
         <div className={css.main} data-theme={theme}>
             <div className={css.search}>
+
+
                 <form onSubmit={handleSubmit(search)}>
 
                     <input type={"text"} placeholder={'search movie'} {...register('search movie')}
                            onChange={(e) => setQuery(e.target.value)}/>
                     <Button variant="contained" size={"small"}>search</Button>
                 </form>
+                <Button size={'small'} variant="contained" color={'error'} onClick={()=>{navigate('/favorite')}}>My movies</Button>
             </div>
             <div className={css.name}>
                 <h2 onClick={()=>navigate('/movies')}>BEST MOVIES</h2>

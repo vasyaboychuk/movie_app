@@ -12,10 +12,14 @@
     background-color:#DEE4E7;
     color: #37474F;
 
-}@media screen and (max-width: 800px){
+}
+@media screen and (max-width: 800px){
     .wrap{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
     }
 
 }

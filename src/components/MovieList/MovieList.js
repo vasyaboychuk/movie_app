@@ -28,7 +28,7 @@ function MovieList() {
         //     }else{
         //         dispatch(movieActions.getAllByPage(currentPage))
         //     }
-        // },[currentPage])
+        // },[currentPage,genre])
 
     return (
         <div className={css.wrap} data-theme={theme}>

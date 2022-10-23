@@ -35,3 +35,10 @@
     background-color: slategrey;
     color: #002e3f;
 }
+@media screen and (max-width: 800px){
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

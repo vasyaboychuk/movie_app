@@ -7,7 +7,9 @@ const initialState = {
     currentPage: 1,
     totalPage: 0,
     movies: [],
-    currentMovie: null
+    currentMovie: null,
+    favouriteMovies:[]
+
 };
 
 const getAllByPage = createAsyncThunk(
@@ -69,7 +71,8 @@ const movieSlice = createSlice({
     reducers: {
         setCurrentPage: (state, action) => {
             state.currentPage = action.payload
-        }
+        },
+
     },
     extraReducers: builder =>
         builder
@@ -96,7 +99,9 @@ const movieActions = {
     getById,
     setCurrentPage,
     getBySearch,
-    getMovieByGenre
+    getMovieByGenre,
+
+
 }
 
 export {

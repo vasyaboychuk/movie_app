@@ -43,6 +43,7 @@
 .btn>button{
     height: 60%;
     width: 70%;
+    margin: 10px;
 }
 [data-theme='dark'] .container{
     background-color: #272c33;

@@ -13,3 +13,10 @@
     margin-bottom: 30px;
 
 }
+@media screen and (max-width: 800px){
+    .container{
+        display: flex;
+        justify-content: start;
+
+    }
+}
