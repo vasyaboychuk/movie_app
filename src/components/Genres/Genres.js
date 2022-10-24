@@ -14,27 +14,18 @@ const Genres=()=> {
     const dispatch = useDispatch();
 
 
+    const handleCurrentGenre=(e)=>{
+       dispatch(genresActions.setGenre(e))
 
-
-    // const handleCurrentGenre=(e)=>{
-    //    dispatch(genresActions.setGenre(e.target.value))
-    //
-    // }
-
-
+    }
 
     useEffect(()=>{
         dispatch(genresActions.getAll());
-    },[])
+    },[genres])
 
     return (
         <div className={css.genres}>
-            {/*{genres.genres?.map(genre=><button key={genre.id}>{genre.name}</button>)}*/}
-            {/*<select>*/}
-            {/*    { genres.genres?.map(genre=><button value={genre.name} onClick={(e)=>handleCurrentGenre(e)} >{genre.name}</button>)}*/}
-                { genres.genres?.map(genre=><Button onClick={()=>dispatch(genresActions.setGenre(genre.id))} variant="outlined" color="inherit">{genre.name}</Button>)}
-
-            {/*</select>*/}
+            { genres.genres?.map(genre=><Button onClick={()=>handleCurrentGenre(genre.id)} variant="outlined" color="inherit">{genre.name}</Button>)}
         </div>
     )
 }

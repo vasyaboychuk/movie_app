@@ -27,7 +27,6 @@ const genreSlice = createSlice({
     reducers: {
         setGenre:(state,action)=>{
             state.genre=action.payload
-
         }
     },
     extraReducers: builder =>
