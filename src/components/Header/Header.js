@@ -3,11 +3,12 @@ import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {Button} from "@mui/material";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ReactSwitch from 'react-switch';
 
+import {ThemeContext} from "../../App";
 import css from './Header.module.css';
 import {movieActions} from "../../redux";
-import {ThemeContext} from "../../App";
 
 
 function Header(props) {
@@ -40,10 +41,17 @@ function Header(props) {
             <div className={css.name}>
                 <h2 onClick={()=>navigate('/movies')}>BEST MOVIES</h2>
             </div>
-            <div className={css.themeSwitcher}>
-                <span>{theme==='light'?'Light Mode':'Dark Mode'}</span>
-                <ReactSwitch  checked={theme==='dark'} onChange={toggle}/>
+            <div className={css.info}>
+                <div className={css.user}>
+                    <AccountCircleIcon fontSize={"large"}/>
+                    <h5>username</h5>
+                </div>
+                <div className={css.themeSwitcher}>
+                    <span>{theme==='light'?'Light Mode':'Dark Mode'}</span>
+                    <ReactSwitch height={20}  checked={theme==='dark'} onChange={toggle}/>
+                </div>
             </div>
+
 
         </div>
     );

@@ -5,7 +5,7 @@ import {createContext, useState} from "react";
 
 import {MainLayout} from "./layouts";
 import {MovieDetailsPage, MoviesPage} from "./pages";
-import {FavouriteMoviesPage} from "./pages/FavouriMoviesPage/FavouriteMoviesPage";
+import {FavouriteMoviesPage} from "./pages/FavouriteMoviesPage/FavouriteMoviesPage";
 
 export const ThemeContext=createContext(null)
 

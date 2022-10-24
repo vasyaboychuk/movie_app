@@ -1,11 +1,11 @@
-.Card{
-    box-sizing: border-box;
-    width: 20%;
-    height: 415px;
-    min-height: 250px;
-    display: flex;
-    flex-direction: column;
-    background-color: #282c34;
-    border-radius: 5px;
-    padding: 5px;
+.Card {
+        box-sizing: border-box;
+        width: 20%;
+        height: 415px;
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        background-color: #282c34;
+        border-radius: 5px;
+        /*padding: 5px;*/
 }

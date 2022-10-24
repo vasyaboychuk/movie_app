@@ -8,8 +8,9 @@ const initialState = {
     totalPage: 0,
     movies: [],
     currentMovie: null,
-    favouriteMovies:[]
-
+    favouriteMovies: [],
+    loading: false,
+    error:null
 };
 
 const getAllByPage = createAsyncThunk(
@@ -71,8 +72,11 @@ const movieSlice = createSlice({
     initialState,
     reducers: {
         setCurrentPage: (state, action) => {
-            state.currentPage = action.payload
+            state.currentPage = action.payload;
         },
+        setFavouriteMovies:(state,action)=>{
+            state.favouriteMovies = action.payload;
+        }
 
     },
     extraReducers: builder =>
@@ -80,6 +84,14 @@ const movieSlice = createSlice({
             .addCase(getAllByPage.fulfilled, (state, action) => {
                 state.movies = action.payload.results;
                 state.totalPage = action.payload.total_pages;
+                state.loading=false
+            })
+            .addCase(getAllByPage.rejected,(state,action)=>{
+                state.error=action.payload
+                state.loading=false
+            })
+            .addCase(getAllByPage.pending,(state,action)=>{
+                state.loading=true
             })
             .addCase(getById.fulfilled, (state, action) => {
                 state.currentMovie = action.payload
@@ -93,12 +105,13 @@ const movieSlice = createSlice({
 });
 
 
-const {reducer: movieReducer, actions: {setCurrentPage}} = movieSlice;
+const {reducer: movieReducer, actions: {setCurrentPage,setFavouriteMovies}} = movieSlice;
 
 const movieActions = {
     getAllByPage,
     getById,
     setCurrentPage,
+    setFavouriteMovies,
     getBySearch,
     getMovieByGenre,
 

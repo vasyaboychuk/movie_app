@@ -1,21 +1,24 @@
-import {Badge} from "@mui/material";
+import {Badge, Button} from "@mui/material";
 import StarRatings from "react-star-ratings/build/star-ratings";
+import {useDispatch} from "react-redux";
 
 import css from "../MovieListCard/MovieListCard.module.css";
-import {json} from "react-router-dom";
+import {movieActions} from "../../redux";
 
 function FavouriteMovies({movie}) {
     const {title, poster_path,vote_average,adult,original_language,id} = movie;
-    console.log(movie);
+
+    const dispatch = useDispatch();
 
     let moviesFavourite = JSON.parse(localStorage.getItem('favourite'));
 
-    const deleteMovie=()=>{
+    const deleteMovie = () => {
+        const movieList = moviesFavourite.filter(movie => movie.id !== id);
+        localStorage.setItem('favourite', JSON.stringify(movieList));
 
-        let movieForDelete = moviesFavourite.filter(movie=>movie.id!==id);
-        console.log(movieForDelete);
-        localStorage.removeItem('movieForDelete')
+        dispatch(movieActions.setFavouriteMovies(movieList))
     }
+
     return (
         <div className={css.Card}  >
             {adult && <Badge badgeContent={'+18'} color={"secondary"}/>}
@@ -41,8 +44,9 @@ function FavouriteMovies({movie}) {
                                      starDimension="15px"
                                      starSpacing="0px"
                         />
+                        <Button color={"error"} size={"small"} variant="contained" onClick={deleteMovie}> Delete</Button>
+
                     </div>
-                    <button onClick={deleteMovie}>delete</button>
 
                 </div>
             </div>

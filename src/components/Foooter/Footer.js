@@ -3,8 +3,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
-
 import {useContext} from "react";
+
 import {ThemeContext} from "../../App";
 import css from './Footer.module.css';
 
