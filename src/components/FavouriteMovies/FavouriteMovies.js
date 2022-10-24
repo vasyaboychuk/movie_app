@@ -6,6 +6,7 @@ import css from "../MovieListCard/MovieListCard.module.css";
 
 function FavouriteMovies({movie}) {
     const {title, poster_path,vote_average,adult,original_language} = movie;
+    console.log(movie);
     return (
         <div className={css.Card}  >
             {adult && <Badge badgeContent={'+18'} color={"secondary"}/>}
