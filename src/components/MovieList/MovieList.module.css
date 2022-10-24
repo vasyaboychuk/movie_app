@@ -4,6 +4,13 @@
     gap:10px;
     justify-content: space-around;
 }
+.scrollButton{
+    position:fixed;
+    bottom: 50px;
+    right: 50px;
+    height: 70px;
+    width:70px;
+}
 [data-theme='dark'] {
     background-color: #272c33;
     color:snow;
@@ -13,6 +20,7 @@
     color: #37474F;
 
 }
+
 @media screen and (max-width: 800px){
     .wrap{
         display: flex;

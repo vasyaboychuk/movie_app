@@ -1,6 +1,7 @@
-import {FavouriteMoviesList} from "../../components/FavouriteMoviesList/FavouriteMoviesList";
+import {FavouriteMoviesList} from "../../components";
 
-function FavouriteMoviesPage(props) {
+
+function FavouriteMoviesPage() {
     return (
         <div>
             <FavouriteMoviesList/>

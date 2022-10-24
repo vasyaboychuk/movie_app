@@ -6,13 +6,8 @@ import {genresActions} from "../../redux/slices/genre.slice";
 import css from './Genres.module.css';
 
 const Genres=()=> {
-
-
-
     const {genres,genre} = useSelector(state=>state.genreReducer);
-
     const dispatch = useDispatch();
-
 
     const handleCurrentGenre=(e)=>{
        dispatch(genresActions.setGenre(e))

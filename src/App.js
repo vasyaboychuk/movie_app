@@ -5,7 +5,6 @@ import {createContext, useState} from "react";
 
 import {MainLayout} from "./layouts";
 import {MovieDetailsPage, MoviesPage} from "./pages";
-import {Favorite} from "@mui/icons-material";
 import {FavouriteMoviesPage} from "./pages/FavouriMoviesPage/FavouriteMoviesPage";
 
 export const ThemeContext=createContext(null)
@@ -26,7 +25,6 @@ function App() {
                         <Route path={'/movies'} element={<MoviesPage/>}/>
                         <Route path={'/movies/:id'} element={<MovieDetailsPage/>}/>
                         <Route path={'/favorite'} element={<FavouriteMoviesPage/>}/>
-
                     </Route>
                 </Routes>
             </div>
