@@ -1,6 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useContext, useEffect, useState} from "react";
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 
 import {ThemeContext} from "../../App";
 import {movieActions} from "../../redux";
@@ -37,13 +38,16 @@ function MovieList() {
     }, [currentPage,genre]);
 
     return (
-        <div className={css.wrap} data-theme={theme}>
-            {loading&&<h1>Loading...</h1>}
-            {movies.map(movie => <MovieListCard key={movie.id} movie={movie}/>)}
-            {toTopButton&&(<KeyboardDoubleArrowUpIcon  className={css.scrollButton} color={'warning'} fontSize={'large'} onClick={scrollUp}
+        <div className={css.container}>
+            {loading&&<h1>Loading... <HourglassBottomIcon/></h1>}
+            <div className={css.wrap} data-theme={theme}>
+                {movies.map(movie => <MovieListCard key={movie.id} movie={movie}/>)}
+                {toTopButton&&(<KeyboardDoubleArrowUpIcon  className={css.scrollButton} color={'warning'} fontSize={'large'} onClick={scrollUp}
 
-            />)}
+                />)}
+            </div>
         </div>
+
     )
 }
 

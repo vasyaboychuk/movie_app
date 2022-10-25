@@ -10,7 +10,8 @@ const initialState = {
     currentMovie: null,
     favouriteMovies: [],
     loading: false,
-    error:null
+    error:null,
+    trailer:[]
 };
 
 const getAllByPage = createAsyncThunk(
@@ -55,7 +56,7 @@ const getBySearch = createAsyncThunk(
 );
 
 const getMovieByGenre = createAsyncThunk(
-    " genreSlice/getMovieByGenre",
+    " movieSlice/getMovieByGenre",
     async (idGenre, {rejectWithValue}) => {
         try {
             const {data} = await genreService.getWithSearch(idGenre);
@@ -63,6 +64,17 @@ const getMovieByGenre = createAsyncThunk(
         } catch (e) {
             return rejectWithValue(e.response.data)
 
+        }
+    }
+);
+const getTrailerById = createAsyncThunk(
+    "movieSlice/getTrailerById",
+    async ({id}, {rejectWithValue}) => {
+        try {
+            const {data} = await movieService.getTrailerById(id);
+            return data;
+        } catch (e) {
+            return rejectWithValue(e.response.data)
         }
     }
 );
@@ -102,6 +114,9 @@ const movieSlice = createSlice({
             .addCase(getMovieByGenre.fulfilled, (state, action) => {
                 state.movies = action.payload.results
             })
+            .addCase(getTrailerById.fulfilled,(state,action)=>{
+                state.trailer=action.payload.results
+            })
 });
 
 
@@ -114,6 +129,7 @@ const movieActions = {
     setFavouriteMovies,
     getBySearch,
     getMovieByGenre,
+    getTrailerById
 
 
 }

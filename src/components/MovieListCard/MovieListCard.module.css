@@ -12,6 +12,7 @@
 .Card:hover {
     background-color: white;
     color:black;
+    transform: scale(1.1);
 }
 .CardInfo{
     width: 100%;
