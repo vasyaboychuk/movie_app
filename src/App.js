@@ -4,7 +4,7 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import {createContext, useState} from "react";
 
 import {MainLayout} from "./layouts";
-import {MovieDetailsPage, MoviesPage} from "./pages";
+import {MovieDetailsPage, MoviesPage, NotFoundPage} from "./pages";
 import {FavouriteMoviesPage} from "./pages/FavouriteMoviesPage/FavouriteMoviesPage";
 
 export const ThemeContext=createContext(null)
@@ -26,6 +26,7 @@ function App() {
                         <Route path={'/movies/:id'} element={<MovieDetailsPage/>}/>
                         <Route path={'/favorite'} element={<FavouriteMoviesPage/>}/>
                     </Route>
+                    <Route path={'*'} element={<NotFoundPage/>}/>
                 </Routes>
             </div>
         </ThemeContext.Provider>
